@@ -1,124 +1,123 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useGetAllNews } from "../../hooks/useNewsCnbcHooks";
+import { NewsHeading, NewsCardHeadingTitle } from "../../modules/app.module";
 import {
-  SkeletonNewsCardItems,
-  CardItems,
-  CardHeading,
-  CardHeadingTitle,
-  CardHeadingBreadcrumb,
-  SearchNews,
-  SearchNewsResults,
-  PaginationNews,
-} from "./modules/Loadable";
+  useGetAllNews,
+  useGetEntrepreneurNews,
+  useGetLatestNews,
+  useGetLifestyleNews,
+  useGetMarketNews,
+  useGetSyariahNews,
+} from "../../hooks/useNewsCnbcHooks";
+import {
+  useGetNasionalNews,
+  useGetInternasionalNews,
+  useGetTeknologiNews,
+  useGetEkonomiNews,
+  useGetOlahragaNews,
+  useGetGayaHidupNews,
+} from "../../hooks/useNewsCnnHooks";
 
-export const RenderedData = ({
-  isLoading,
-  isSuccess,
-  isError,
-  Error,
-  items,
-  searchQuery,
-  setSearchQuery,
-  setSearchResult,
-  searchResult,
-  postsPerpage,
-  currentPage,
-  setCurrentPage,
-}) => {
-  const indexOfLastPost = currentPage * postsPerpage;
-  const indexOfFirstPost = indexOfLastPost - postsPerpage;
-  const results = items?.slice(indexOfFirstPost, indexOfLastPost);
+import NewsKategoriCardItems from "../../modules/components/NewsKategoriCardItems/NewsKategoriCardItems";
 
-  const onPreviousPageChangeHandler = (e) => {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const onNextPageChangeHandler = (e) => {
-    if (currentPage !== Math.ceil(items?.length / postsPerpage)) {
-      setCurrentPage(currentPage + 1);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  };
-
+export const RenderedData = () => {
   return (
     <>
-      <CardHeading>
-        <div className="d-flex justify-content-between g-2 flex-wrap">
-          <CardHeadingTitle title="Berita Terkini" />
-          <CardHeadingBreadcrumb linkName="Berita Terkini" />
-        </div>
-        <p>
-          Berita terkini dari isu Dalam Negeri maupun Internasional yang sedang
-          berlangsung
-        </p>
-      </CardHeading>
-      <SearchNews
-        items={items}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        setSearchResult={setSearchResult}
-      />
-      {isLoading && !isSuccess && <SkeletonNewsCardItems count={12} />}
-      {!isLoading && isSuccess && (
-        <Fragment>
-          {!searchQuery.get("search") ? (
-            <Fragment>
-              <div className="row justify-content-arround g-3 py-3">
-                {results?.map((item, index) => (
-                  <CardItems key={index} items={item} />
-                ))}
-              </div>
-              {items?.length >= 12 && (
-                <PaginationNews
-                  totalPost={items?.length}
-                  postPerPage={postsPerpage}
-                  currentPage={currentPage}
-                  nextPage={onNextPageChangeHandler}
-                  previousPage={onPreviousPageChangeHandler}
-                />
-              )}
-            </Fragment>
-          ) : (
-            <div className="row justify-content-arround g-3 py-3">
-              <SearchNewsResults
-                items={items}
-                searchQuery={searchQuery}
-                searchResult={searchResult}
-              />
-            </div>
-          )}
-        </Fragment>
-      )}
+      <NewsHeading>
+        <NewsCardHeadingTitle title="Pilihan Berita Lainnya" />
+        <p>Temukan berita-berita lainnya dari semua kategori berita</p>
+      </NewsHeading>
+
+      <div className="row justify-content-center g-3 py-3">
+        <NewsKategoriCardItems
+          dataFetching={useGetAllNews}
+          title="Berita Terkini"
+          desc="Berita peristiwa terkini di Indonesia dan Internasional yang sedang
+          berlangsung"
+          link={"/berita/terkini"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetLatestNews}
+          title="Berita Terbaru"
+          desc="Berita peristiwa terbaru di Indonesia dan Internasional yang sedang berlangsung"
+          link={"/berita/terbaru"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetNasionalNews}
+          title="Berita Nasional"
+          desc="Berita terkini dari isu dalam negeri yang sedang berlangsung"
+          link={"/berita/nasional"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetInternasionalNews}
+          title="Berita Internasional"
+          desc="Berita terkini dari isu internasional yang sedang berlangsung"
+          link={"/berita/internasional"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetEkonomiNews}
+          title="Berita Ekonomi"
+          desc=" Berita terkini dari isu Ekonomi di indonesia dan Internasional yang
+          sedang berlangsung"
+          link={"/berita/ekonomi"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetEntrepreneurNews}
+          title="Berita Entrepreneur"
+          desc=" Berita terkini dari isu entrepreneur di indonesia dan Internasional yang
+          sedang berlangsung"
+          link={"/berita/entrepreneur"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetMarketNews}
+          title="Berita Market"
+          desc=" Berita terkini dari isu market / penjualan di indonesia dan Internasional yang
+          sedang berlangsung"
+          link={"/berita/market"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetTeknologiNews}
+          title="Berita Teknologi"
+          desc=" Berita terkini dari isu teknologi di indonesia dan Internasional yang
+          sedang berlangsung"
+          link={"/berita/teknologi"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetOlahragaNews}
+          title="Berita Olahraga"
+          desc="Berita terkini dari isu olahraga di Indonesia dan Internasional yang  sedang berlangsung"
+          link={"/berita/olahraga"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetLifestyleNews}
+          title="Berita Lifestyle"
+          desc="Berita terkini dari isu lifestyle di Indonesia dan Internasional yang  sedang berlangsung"
+          link={"/berita/lifestyle"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetGayaHidupNews}
+          title="Berita Kesehatan"
+          desc="Berita terkini dari isu kesehatan di Indonesia dan Internasional yang sedang berlangsung"
+          link={"/berita/kesehatan"}
+        />
+        <NewsKategoriCardItems
+          dataFetching={useGetSyariahNews}
+          title="Berita Syariah"
+          desc="Berita terkini dari isu syariah di Indonesia dan Internasional yang sedang berlangsung"
+          link={"/berita/syariah"}
+        />
+      </div>
     </>
   );
 };
 
 export default function Berita() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const {
-    data: items,
-    isLoading,
-    isSuccess,
-    isError,
-    error,
-  } = useGetAllNews(currentPage);
-
   // Set title
-  let pageTitle =
-    "Berita terkini dari isu Dalam Negeri maupun Internasional yang sedang berlangsung";
+  let pageTitle = "Pilihan Berita Lainnya";
 
   // Search & Set title
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -135,9 +134,6 @@ export default function Berita() {
       document.title = pageTitle;
     }
   }
-
-  // Pagination
-  const [postsPerpage, setPostPerpage] = useState(12);
 
   return (
     <>
@@ -157,19 +153,7 @@ export default function Berita() {
           content="Berita peristiwa terbaru di Indonesia dan luar negeri sedang berlangsung"
         />
       </Helmet>
-      <RenderedData
-        isLoading={isLoading}
-        isError={isError}
-        isSuccess={isSuccess}
-        items={items}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        setSearchResult={setSearchResult}
-        searchResult={searchResult}
-        currentPage={currentPage}
-        postsPerpage={postsPerpage}
-        setCurrentPage={setCurrentPage}
-      />
+      <RenderedData />
     </>
   );
 }

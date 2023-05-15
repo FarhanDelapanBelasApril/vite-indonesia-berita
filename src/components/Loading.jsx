@@ -1,16 +1,20 @@
 /* eslint-disable no-unused-vars */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Loading() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <div className="spinner">
-        <div className="blob top" />
-        <div className="blob bottom" />
-        <div className="blob left" />
+      {isLoading && (
+        <div className="spinner">
+          <div className="blob top" />
+          <div className="blob bottom" />
+          <div className="blob left" />
 
-        <div className="blob move-blob" />
-      </div>
+          <div className="blob move-blob" />
+        </div>
+      )}
     </>
   );
 }

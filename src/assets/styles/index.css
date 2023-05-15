@@ -3,7 +3,7 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #121010 !important;
+  background-color: #0d0d0d !important;
   color: rgba(255, 255, 255, 0.87) !important;
   color-scheme: dark;
   font-synthesis: none;
@@ -14,23 +14,29 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+main {
+  padding: 20px;
+}
+
 .navbar {
   width: 100%;
   min-height: 50px;
   height: auto;
-  background-color: #121010 !important;
+  background-color: #0d0d0d !important;
   border-bottom: 1px solid #1f1f1f;
   /* transition: background-color 0.4s ease 0s; */
+  font-family: "Noto Serif", serif;
 }
 .navbar .navbar-brand {
-  font-size: 22px;
+  font-size: 20px !important;
   font-weight: 500;
   font-style: normal;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   color: #fff !important;
+  margin-left: 10px;
 }
 .navbar .nav-link {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 500;
   font-style: normal;
   color: #fff !important;
@@ -44,34 +50,8 @@ body {
   -moz-transition: background-color 300ms ease-out !important;
   -o-transition: background-color 300ms ease-out !important;
   transition: background-color 300ms ease-out !important;
+  margin-left: 10px;
 }
-
-@media (min-width: 576px) {
-  .navbar .navbar-brand {
-    font-size: 28px;
-  }
-  .navbar .nav-link {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar .navbar-brand {
-    font-size: 28px;
-  }
-  .navbar .nav-link {
-    font-size: 18px;
-  }
-}
-
-/* @media (max-width: 500px) {
-  .navbar .navbar-brand {
-    font-size: 22px;
-  }
-  .navbar .nav-link {
-    font-size: 16px;
-  }
-} */
 
 /*
    Footer
@@ -111,14 +91,6 @@ body {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-}
-
-.ib-card-heading {
-  width: 100%;
-  height: auto;
-  padding: 20px 20px;
-  background-color: #181717;
-  border-radius: 12px;
 }
 
 .spinner {
@@ -272,14 +244,4 @@ body {
     top: 50%;
     left: 0;
   }
-}
-
-.news-card-items__recomended {
-  width: 100%;
-  height: auto;
-  background-color: #181717 !important;
-  box-shadow: 0 !important;
-  border: 0;
-  text-align: left;
-  overflow: hidden;
 }

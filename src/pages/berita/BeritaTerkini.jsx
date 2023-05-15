@@ -3,7 +3,7 @@
 import { useState, Fragment } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useGetOlahragaNews } from "../../hooks/useNewsCnnHooks";
+import { useGetAllNews } from "../../hooks/useNewsCnnHooks";
 import {
   NewsHeading,
   NewsCardHeadingTitle,
@@ -56,10 +56,10 @@ export const RenderedData = ({
   return (
     <>
       <NewsHeading>
-        <NewsCardHeadingTitle title="Berita Olahraga" />
+        <NewsCardHeadingTitle title="Berita Terkini" />
         <p>
-          Berita terkini dari isu olahraga dalam negeri dan internasional yang
-          sedang berlangsung
+          Berita peristiwa terkini di Indonesia dan luar negeri yang sedang
+          berlangsung
         </p>
       </NewsHeading>
       <NewsSearch
@@ -108,7 +108,7 @@ export const RenderedData = ({
   );
 };
 
-export default function BeritaOlahraga() {
+export default function BeritaTerkini() {
   const [currentPage, setCurrentPage] = useState(1);
   const {
     data: items,
@@ -116,11 +116,11 @@ export default function BeritaOlahraga() {
     isSuccess,
     isError,
     error,
-  } = useGetOlahragaNews(currentPage);
+  } = useGetAllNews(currentPage);
 
   // Set title
   let pageTitle =
-    "Berita terkini dari isu olahraga dalam negeri dan internasional yang  sedang berlangsung";
+    "Berita peristiwa terkini di Indonesia dan luar negeri sedang berlangsung";
 
   // Search & Set title
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -151,12 +151,12 @@ export default function BeritaOlahraga() {
         <meta
           name="title"
           property="og:title"
-          content="Berita terkini dari isu olahraga dalam negeri dan internasional yang  sedang berlangsung"
+          content="Berita peristiwa terkini di Indonesia dan luar negeri sedang berlangsung"
         />
         <meta
           name="description"
           property="og:description"
-          content="Berita terkini dari isu olahraga dalam negeri dan internasional yang  sedang berlangsung"
+          content="Berita peristiwa terkini di Indonesia dan luar negeri sedang berlangsung"
         />
       </Helmet>
       <RenderedData

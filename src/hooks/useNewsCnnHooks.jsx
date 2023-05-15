@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 import {
   fetchAllNews,
   fetchNasionalNews,
@@ -11,21 +11,14 @@ import {
   fetchOlahragaNews,
   fetchTeknologiNews,
 } from "../api/NewsSourceCnnApi";
-import React from "react";
+import React, { useState } from "react";
 
 export const useGetAllNews = (page) => {
   const [intervalMs, setIntervalMs] = React.useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(["getAllNews", page], () => fetchAllNews(page), {
-    onSuccess: () => {
-      queryClient.invalidateQueries("getAllNews");
-    },
-    onError: () => {
-      queryClient.invalidateQueries("getAllNews");
-    },
     refetchOnWindowFocus: false,
-    refetchInterval: intervalMs,
+
     select: (data) => data.data.sort((a, b) => b.title - a.title),
   });
 
@@ -33,20 +26,13 @@ export const useGetAllNews = (page) => {
 };
 
 export const useGetNasionalNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getNasionalNews", page],
     () => fetchNasionalNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
-
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }
   );
@@ -55,18 +41,12 @@ export const useGetNasionalNews = (page) => {
 };
 
 export const useGetInternasionalNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getInternasionalNews", page],
     () => fetchInternasionalNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }
@@ -76,18 +56,12 @@ export const useGetInternasionalNews = (page) => {
 };
 
 export const useGetEkonomiNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getEkonomiNews", page],
     () => fetchEkonomiNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }
@@ -97,18 +71,12 @@ export const useGetEkonomiNews = (page) => {
 };
 
 export const useGetGayaHidupNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getGayaHidup", page],
     () => fetchGayaHidupNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }
@@ -118,18 +86,12 @@ export const useGetGayaHidupNews = (page) => {
 };
 
 export const useGetHiburanNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getHiburanNews", page],
     () => fetchHiburanNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }
@@ -139,18 +101,12 @@ export const useGetHiburanNews = (page) => {
 };
 
 export const useGetOlahragaNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getOlahragaNews", page],
     () => fetchOlahragaNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }
@@ -160,18 +116,12 @@ export const useGetOlahragaNews = (page) => {
 };
 
 export const useGetTeknologiNews = (page) => {
+  const [intervalMs, setIntervalMs] = useState(1000);
   // Access the client
-  const queryClient = useQueryClient();
   const query = useQuery(
     ["getTeknologiNews", page],
     () => fetchTeknologiNews(page),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
-      onError: () => {
-        queryClient.invalidateQueries("getAllNews");
-      },
       refetchOnWindowFocus: false,
       select: (data) => data.data.sort((a, b) => b.title - a.title),
     }

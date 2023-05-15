@@ -32,8 +32,8 @@ export default function HeaderNav() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
+            width="28"
+            height="28"
             fill="#fff"
             className="bi bi-list"
             viewBox="0 0 16 16"
@@ -70,6 +70,13 @@ export default function HeaderNav() {
               className="nav-link mx-md-2"
             >
               Berita
+            </Link>
+            <Link
+              onClick={handleScrollTop}
+              to="/berita/terkini"
+              className="nav-link mx-md-2"
+            >
+              Terkini
             </Link>
             <Link
               onClick={handleScrollTop}

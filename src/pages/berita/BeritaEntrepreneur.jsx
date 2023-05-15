@@ -5,15 +5,15 @@ import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useGetEntrepreneurNews } from "../../hooks/useNewsCnbcHooks";
 import {
-  SkeletonNewsCardItems,
-  CardItems,
-  CardHeading,
-  CardHeadingTitle,
-  CardHeadingBreadcrumb,
-  SearchNews,
-  SearchNewsResults,
-  PaginationNews,
-} from "./modules/Loadable";
+  NewsHeading,
+  NewsCardHeadingTitle,
+  NewsSearch,
+  NewsSearchResults,
+  NewsCardItems,
+  NewsPagination,
+  NewsSkeletonCardItems,
+  NewsRecomended,
+} from "../../modules/app.module";
 
 export const RenderedData = ({
   isLoading,
@@ -55,34 +55,32 @@ export const RenderedData = ({
 
   return (
     <>
-      <CardHeading>
-        <div className="d-flex justify-content-between g-2 flex-wrap">
-          <CardHeadingTitle title="Berita Entrepreneur" />
-          <CardHeadingBreadcrumb linkName="Berita Entrepreneur" />
-        </div>
+      <NewsHeading>
+        <NewsCardHeadingTitle title="Berita Entrepreneur" />
         <p>
           Berita terkini dari isu Entrepreneur di indonesia dan Internasional
           yang sedang berlangsung
         </p>
-      </CardHeading>
-      <SearchNews
+      </NewsHeading>
+      <NewsSearch
         items={items}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         setSearchResult={setSearchResult}
       />
-      {isLoading && !isSuccess && <SkeletonNewsCardItems count={12} />}
+      {isLoading && !isSuccess && <NewsSkeletonCardItems count={12} />}
+      {!isLoading && !items && <NewsSkeletonCardItems count={12} />}
       {!isLoading && isSuccess && (
         <Fragment>
           {!searchQuery.get("search") ? (
             <Fragment>
               <div className="row justify-content-arround g-3 py-3">
                 {results?.map((item, index) => (
-                  <CardItems key={index} items={item} />
+                  <NewsCardItems key={index} items={item} />
                 ))}
               </div>
               {items?.length >= 12 && (
-                <PaginationNews
+                <NewsPagination
                   totalPost={items?.length}
                   postPerPage={postsPerpage}
                   currentPage={currentPage}
@@ -93,13 +91,17 @@ export const RenderedData = ({
             </Fragment>
           ) : (
             <div className="row justify-content-arround g-3 py-3">
-              <SearchNewsResults
+              <NewsSearchResults
                 items={items}
                 searchQuery={searchQuery}
                 searchResult={searchResult}
               />
             </div>
           )}
+
+          <div className="py-3">
+            <NewsRecomended title="Baca Berita Lainnya" />
+          </div>
         </Fragment>
       )}
     </>
@@ -149,12 +151,12 @@ export default function BeritaEntrepreneur() {
         <meta
           name="title"
           property="og:title"
-          content="Berita peristiwa terbaru di Indonesia dan luar negeri sedang berlangsung"
+          content="Berita terkini dari isu Entrepreneur di indonesia dan Internasional yang sedang berlangsung"
         />
         <meta
           name="description"
           property="og:description"
-          content="Berita peristiwa terbaru di Indonesia dan luar negeri sedang berlangsung"
+          content="Berita terkini dari isu Entrepreneur di indonesia dan Internasional yang sedang berlangsung"
         />
       </Helmet>
       <RenderedData

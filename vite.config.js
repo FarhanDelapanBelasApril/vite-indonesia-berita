@@ -11,10 +11,6 @@ const reactDeps = Object.keys(dependencies).filter(
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), splitVendorChunkPlugin()],
-  optimizeDeps: {
-    include: ["esm-dep > cjs-dep"],
-    force: true,
-  },
   build: {
     target: "es2015",
     sourcemap: false,

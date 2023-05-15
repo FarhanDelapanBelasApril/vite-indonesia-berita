@@ -3,7 +3,7 @@
 import { useState, Fragment } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useGetOlahragaNews } from "../../hooks/useNewsCnnHooks";
+import { useGetGayaHidupNews } from "../../hooks/useNewsCnnHooks";
 import {
   NewsHeading,
   NewsCardHeadingTitle,
@@ -56,9 +56,9 @@ export const RenderedData = ({
   return (
     <>
       <NewsHeading>
-        <NewsCardHeadingTitle title="Berita Olahraga" />
+        <NewsCardHeadingTitle title="Berita Kesehatan" />
         <p>
-          Berita terkini dari isu olahraga dalam negeri dan internasional yang
+          Berita terkini dari isu kesehatan di indonesia dan Internasional yang
           sedang berlangsung
         </p>
       </NewsHeading>
@@ -108,7 +108,7 @@ export const RenderedData = ({
   );
 };
 
-export default function BeritaOlahraga() {
+export default function BeritaKesehatan() {
   const [currentPage, setCurrentPage] = useState(1);
   const {
     data: items,
@@ -116,11 +116,11 @@ export default function BeritaOlahraga() {
     isSuccess,
     isError,
     error,
-  } = useGetOlahragaNews(currentPage);
+  } = useGetGayaHidupNews(currentPage);
 
   // Set title
   let pageTitle =
-    "Berita terkini dari isu olahraga dalam negeri dan internasional yang  sedang berlangsung";
+    "Berita terkini dari isu kesehatan di indonesia dan Internasional yang sedang berlangsung";
 
   // Search & Set title
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -151,12 +151,12 @@ export default function BeritaOlahraga() {
         <meta
           name="title"
           property="og:title"
-          content="Berita terkini dari isu olahraga dalam negeri dan internasional yang  sedang berlangsung"
+          content="Berita terkini dari isu Ekonomi di indonesia dan Internasional yang sedang berlangsung"
         />
         <meta
           name="description"
           property="og:description"
-          content="Berita terkini dari isu olahraga dalam negeri dan internasional yang  sedang berlangsung"
+          content="Berita terkini dari isu Ekonomi di indonesia dan Internasional yang sedang berlangsung"
         />
       </Helmet>
       <RenderedData
