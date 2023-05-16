@@ -12,7 +12,7 @@ import {
   useGetLifestyleNews,
   useGetMarketNews,
   useGetSyariahNews,
-} from "../../hooks/useNewsCnbcHooks";
+} from "../../hooks/NewsCnbcHook";
 import {
   useGetNasionalNews,
   useGetInternasionalNews,
@@ -20,7 +20,7 @@ import {
   useGetEkonomiNews,
   useGetOlahragaNews,
   useGetGayaHidupNews,
-} from "../../hooks/useNewsCnnHooks";
+} from "../../hooks/NewsCnnHook";
 
 import NewsKategoriCardItems from "../../modules/components/NewsKategoriCardItems/NewsKategoriCardItems";
 

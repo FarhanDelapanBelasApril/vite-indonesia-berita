@@ -6,26 +6,15 @@ import App from "./App";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { persistQueryClient } from "react-query/persistQueryClient-experimental";
-import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+      refetchOnWindowFocus: false, // default: true
     },
   },
-});
-
-const localStoragePersistor = createWebStoragePersistor({
-  storage: window.localStorage,
-});
-
-persistQueryClient({
-  queryClient,
-  persistor: localStoragePersistor,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(

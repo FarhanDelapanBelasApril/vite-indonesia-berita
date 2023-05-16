@@ -1,14 +1,17 @@
 import axios from "../constants/axios";
 
-export async function fetchAllNews({ pageParams = 0 }) {
+export async function fetchAllNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -16,15 +19,18 @@ export async function fetchAllNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchLifestyleNews({ pageParams = 0 }) {
+export async function fetchLifestyleNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/lifestyle";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -32,15 +38,18 @@ export async function fetchLifestyleNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchTechNews({ pageParams = 0 }) {
+export async function fetchTechNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/tech";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -48,15 +57,18 @@ export async function fetchTechNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchSyariahNews({ pageParams = 0 }) {
+export async function fetchSyariahNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/syariah";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -64,15 +76,18 @@ export async function fetchSyariahNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchEntrepreneurNews({ pageParams = 0 }) {
+export async function fetchEntrepreneurNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/entrepreneur";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -80,15 +95,18 @@ export async function fetchEntrepreneurNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchNewsNews({ pageParams = 0 }) {
+export async function fetchNewsNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/news";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -96,15 +114,18 @@ export async function fetchNewsNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchInvestmentNews({ pageParams = 0 }) {
+export async function fetchInvestmentNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/investment";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -112,15 +133,18 @@ export async function fetchInvestmentNews({ pageParams = 0 }) {
   }
 }
 
-export async function fetchMarketNews({ pageParams = 0 }) {
+export async function fetchMarketNews({ pageParams }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnbc-news/market";
   try {
-    const response = await axios.get(`${endpoint}?page=${pageParams}`, {
-      method: "get",
-      signal: controller.signal,
-      validateStatus: (status) => status >= 200 && status < 300,
-    });
+    const response = await axios.get(
+      `${endpoint}?_page=${pageParams}&_limit=10`,
+      {
+        method: "get",
+        signal: controller.signal,
+        validateStatus: (status) => status >= 200 && status < 300,
+      }
+    );
 
     return response.data;
   } catch (error) {

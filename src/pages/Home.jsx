@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
+import { Helmet } from "react-helmet";
 import {
+  useGetAllNews,
   useGetNasionalNews,
   useGetInternasionalNews,
-} from "../hooks/useNewsCnnHooks";
-import { Helmet } from "react-helmet";
-import { useGetAllNews } from "../hooks/useNewsCnnHooks";
+} from "../hooks/NewsCnnHook";
 import loadable from "@loadable/component";
 
 const WelcomeCardItems = loadable(() =>

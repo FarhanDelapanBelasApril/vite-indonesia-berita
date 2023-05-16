@@ -7,7 +7,8 @@ export default function NewsSearchItems({
   ref,
   searchQuery,
   setSearchQuery,
-  items,
+
+  isStatus,
 }) {
   return (
     <div className="ib-search-items" style={{ position: "relative" }}>
@@ -20,7 +21,7 @@ export default function NewsSearchItems({
           onChange={(e) => setSearchQuery({ search: e.target.value })}
           value={searchQuery.get("search") ? searchQuery.get("search") : ""}
           type="search"
-          disabled={!items}
+          disabled={isStatus === "fetching" && isStatus === "paused"}
           placeholder="Cari..."
           aria-label="Cari"
         />

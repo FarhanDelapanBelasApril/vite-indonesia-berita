@@ -10,6 +10,7 @@ export default function NewsSearch({
   searchQuery,
   setSearchQuery,
   setSearchResult,
+  fetchStatus,
 }) {
   const ref = useRef();
   const filteredSearchQuery = items?.filter(
@@ -35,6 +36,7 @@ export default function NewsSearch({
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
           items={items}
+          isStatus={fetchStatus}
         />
       </div>
     </div>
