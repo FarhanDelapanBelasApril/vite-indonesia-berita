@@ -12,6 +12,7 @@ export default function PageLayout({ children }) {
       <main className="container-fluid position-relative d-block w-100">
         {children}
       </main>
+      <Footer />
     </>
   );
 }

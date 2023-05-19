@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 import axios from "../constants/axios";
 
-export async function fetchAllNews({ pageParams }) {
+export async function fetchAllNews({ pageParams = 0 }) {
   const controller = new AbortController();
   const endpoint = "/v1/cnn-news";
-  const LIMIT = 10;
+  const LIMIT = 18;
 
   try {
     const response = await axios.get(
-      `${endpoint}?_page=${pageParams}&_limit=${LIMIT}`,
+      `${endpoint}?page=${pageParams}&limit=${LIMIT}`,
       {
         method: "get",
         signal: controller.signal,

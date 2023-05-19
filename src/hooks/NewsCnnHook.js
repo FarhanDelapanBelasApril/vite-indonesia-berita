@@ -19,6 +19,7 @@ export const useGetAllNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -32,6 +33,7 @@ export const useGetNasionalNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -45,6 +47,7 @@ export const useGetInternasionalNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -58,6 +61,7 @@ export const useGetEkonomiNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -71,6 +75,7 @@ export const useGetGayaHidupNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -84,6 +89,7 @@ export const useGetHiburanNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -97,6 +103,7 @@ export const useGetOlahragaNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -110,6 +117,7 @@ export const useGetTeknologiNews = () => {
     networkMode: "online",
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data.data.sort((a, b) => b.title.localeCompare(a.title));
     },

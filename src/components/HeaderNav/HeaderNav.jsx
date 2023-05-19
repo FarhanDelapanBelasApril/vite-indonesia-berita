@@ -73,63 +73,63 @@ export default function HeaderNav() {
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/terkini"
+              to="/berita-terkini"
               className="nav-link mx-md-2"
             >
               Terkini
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/terbaru"
+              to="/berita-terbaru"
               className="nav-link mx-md-2"
             >
               Terbaru
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/internasional"
+              to="/berita-internasional"
               className="nav-link mx-md-2"
             >
               Internasional
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/nasional"
+              to="/berita-nasional"
               className="nav-link mx-md-2"
             >
               Nasional
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/teknologi"
+              to="/berita-teknologi"
               className="nav-link mx-md-2"
             >
               Teknologi
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/lifestyle"
+              to="/berita-lifestyle"
               className="nav-link mx-md-2"
             >
               Lifestyle
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/olahraga"
+              to="/berita-olahraga"
               className="nav-link mx-md-2"
             >
               Olahraga
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/ekonomi"
+              to="/berita-ekonomi"
               className="nav-link mx-md-2"
             >
               Ekonomi
             </Link>
             <Link
               onClick={handleScrollTop}
-              to="/berita/entrepreneur"
+              to="/berita-entrepreneur"
               className="nav-link mx-md-2"
             >
               Entrepreneur

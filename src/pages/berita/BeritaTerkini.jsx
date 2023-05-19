@@ -14,7 +14,6 @@ import {
   NewsSkeletonCardItems,
   NewsRecomended,
 } from "../../modules/app.module";
-import Alert from "react-bootstrap/Alert";
 
 export const RenderedData = ({
   items,
@@ -102,7 +101,7 @@ export const RenderedData = ({
             </div>
           )}
 
-          <div className="py-3">
+          <div className="row py-3">
             <NewsRecomended title="Baca Berita Lainnya" />
           </div>
         </Fragment>

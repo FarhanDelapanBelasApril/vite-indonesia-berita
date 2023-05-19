@@ -20,6 +20,7 @@ export const useGetAllNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -34,6 +35,7 @@ export const useGetLifestyleNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -48,6 +50,7 @@ export const useGetTechNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -62,6 +65,7 @@ export const useGetSyariahNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -77,6 +81,7 @@ export const useGetEntrepreneurNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -91,6 +96,7 @@ export const useGetLatestNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -105,6 +111,7 @@ export const useGetInvestmentNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },
@@ -119,6 +126,7 @@ export const useGetMarketNews = () => {
     staleTime: Infinity,
     refetchIntervalInBackground: false,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
     select: (data) => {
       return data?.data.sort((a, b) => b.title.localeCompare(a.title));
     },

@@ -38,77 +38,77 @@ export const RenderedData = () => {
           title="Berita Terkini"
           desc="Berita peristiwa terkini di Indonesia dan Internasional yang sedang
           berlangsung"
-          link={"/berita/terkini"}
+          link={"/berita-terkini"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetLatestNews}
           title="Berita Terbaru"
           desc="Berita peristiwa terbaru di Indonesia dan Internasional yang sedang berlangsung"
-          link={"/berita/terbaru"}
+          link={"/berita-terbaru"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetNasionalNews}
           title="Berita Nasional"
           desc="Berita terkini dari isu dalam negeri yang sedang berlangsung"
-          link={"/berita/nasional"}
+          link={"/berita-nasional"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetInternasionalNews}
           title="Berita Internasional"
           desc="Berita terkini dari isu internasional yang sedang berlangsung"
-          link={"/berita/internasional"}
+          link={"/berita-internasional"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetEkonomiNews}
           title="Berita Ekonomi"
           desc=" Berita terkini dari isu Ekonomi di indonesia dan Internasional yang
           sedang berlangsung"
-          link={"/berita/ekonomi"}
+          link={"/berita-ekonomi"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetEntrepreneurNews}
           title="Berita Entrepreneur"
           desc=" Berita terkini dari isu entrepreneur di indonesia dan Internasional yang
           sedang berlangsung"
-          link={"/berita/entrepreneur"}
+          link={"/berita-entrepreneur"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetMarketNews}
           title="Berita Market"
           desc=" Berita terkini dari isu market / penjualan di indonesia dan Internasional yang
           sedang berlangsung"
-          link={"/berita/market"}
+          link={"/berita-market"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetTeknologiNews}
           title="Berita Teknologi"
           desc=" Berita terkini dari isu teknologi di indonesia dan Internasional yang
           sedang berlangsung"
-          link={"/berita/teknologi"}
+          link={"/berita-teknologi"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetOlahragaNews}
           title="Berita Olahraga"
           desc="Berita terkini dari isu olahraga di Indonesia dan Internasional yang  sedang berlangsung"
-          link={"/berita/olahraga"}
+          link={"/berita-olahraga"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetLifestyleNews}
           title="Berita Lifestyle"
           desc="Berita terkini dari isu lifestyle di Indonesia dan Internasional yang  sedang berlangsung"
-          link={"/berita/lifestyle"}
+          link={"/berita-lifestyle"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetGayaHidupNews}
           title="Berita Kesehatan"
           desc="Berita terkini dari isu kesehatan di Indonesia dan Internasional yang sedang berlangsung"
-          link={"/berita/kesehatan"}
+          link={"/berita-kesehatan"}
         />
         <NewsKategoriCardItems
           dataFetching={useGetSyariahNews}
           title="Berita Syariah"
           desc="Berita terkini dari isu syariah di Indonesia dan Internasional yang sedang berlangsung"
-          link={"/berita/syariah"}
+          link={"/berita-syariah"}
         />
       </div>
     </>

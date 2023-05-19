@@ -12,7 +12,7 @@ export default function WelcomeCardItems() {
     sayHello = "Selamat Pagi";
   } else if (hours >= 12 && hours <= 17) {
     sayHello = "Selamat Siang";
-  } else if (hours >= 17 && hours <= 20) {
+  } else if (hours >= 16 && hours <= 20) {
     sayHello = "Selamat Sore";
   } else {
     sayHello = "Selamat Malam";

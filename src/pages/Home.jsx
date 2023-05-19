@@ -35,17 +35,17 @@ export const NewsItemList = () => {
     <>
       <NewsFeatureItems
         title="Berita Terkini"
-        link="/berita/terkini"
+        link="/berita-terkini"
         dataFetching={useGetAllNews}
       />
       <NewsFeatureItems
         title="Dari Dalam Negeri"
-        link="/berita/nasional"
+        link="/berita-nasional"
         dataFetching={useGetNasionalNews}
       />
       <NewsFeatureItems
         title="Dari Luar Negeri"
-        link="/berita/internasional"
+        link="/berita-internasional"
         dataFetching={useGetInternasionalNews}
       />
     </>
@@ -61,17 +61,20 @@ export default function Home() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{pageTitle}</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link
+          rel="canonical"
+          href="https://vite-indonesia-berita.netlify.app/"
+        />
         <meta name="type" property="og:type" content="article" />
         <meta
           name="title"
           property="og:title"
-          content="Berita olahraga terbaru di indonesia dan internasional yang sedang berlangsung"
+          content="Indonesia Berita Temukan Berita Hari ini di indonesia dan Internasional"
         />
         <meta
           name="description"
           property="og:description"
-          content="Berita olahraga terbaru di indonesia dan internasional yang sedang berlangsung"
+          content="Indonesia Berita Temukan Berita Hari ini di indonesia dan Internasional"
         />
       </Helmet>
 
