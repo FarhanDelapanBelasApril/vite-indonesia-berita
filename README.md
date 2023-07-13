@@ -1,5 +1,5 @@
 # Vite-React-Query-Project-IndonesiaBerita
-Vite Indonesia Berita merupakan sebuah website yang bertujuan untuk menampilkan daftar berita-berita dari beberapa portal berita di Indonesia. 
+Vite Indonesia Berita merupakan sebuah website yang bertujuan untuk menampilkan daftar berita-berita dari beberapa portal berita di Indonesia. <br />
 Keterangan:
 - Mengembangkan aplikasi web untuk mengetahui berita-berita terkini dari dalam negeri maupun luar negeri.
 - Mengembangkan aplikasi web menggunakan bahasa pemrograman Javascript dan Library React.js.
