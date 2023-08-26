@@ -1,0 +1,8 @@
+.news-card-items__recomended {
+  width: 100%;
+  height: auto;
+  background-color: #131313 !important;
+  border: 0;
+  text-align: left;
+  overflow: hidden;
+}

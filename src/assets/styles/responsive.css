@@ -1,0 +1,41 @@
+@media (min-width: 576px) {
+  .navbar .nav-link {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .navbar-brand {
+    font-size: 28px;
+    margin-left: 0;
+  }
+  .navbar .nav-link {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 576px) {
+  .ib-card-items__title h2 {
+    font-size: 26px;
+  }
+  .ib-card-items__description {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ib-card-items {
+    height: 550px;
+    overflow: hidden;
+  }
+  .ib-card-items__image img {
+    width: 100%;
+    height: 250px;
+  }
+  .ib-card-items__title h2 {
+    font-size: 28px;
+  }
+  .ib-card-items__description {
+    font-size: 20px;
+  }
+}

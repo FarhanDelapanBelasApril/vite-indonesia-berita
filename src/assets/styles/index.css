@@ -3,7 +3,7 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #111211 !important;
+  background-color: #0d0d0d !important;
   color: rgba(255, 255, 255, 0.87) !important;
   color-scheme: dark;
   font-synthesis: none;
@@ -12,4 +12,236 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+main {
+  padding: 20px;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  background-color: #0d0d0d !important;
+  border-bottom: 1px solid #1f1f1f;
+  /* transition: background-color 0.4s ease 0s; */
+  font-family: "Noto Serif", serif;
+}
+.navbar .navbar-brand {
+  font-size: 20px !important;
+  font-weight: 500;
+  font-style: normal;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  color: #fff !important;
+  margin-left: 10px;
+}
+.navbar .nav-link {
+  font-size: 16px !important;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff !important;
+}
+.navbar-toggler:focus {
+  transition: ease-in-out 500ms;
+}
+
+.navbar-collapse {
+  -webkit-transition: background-color 300ms ease-out !important;
+  -moz-transition: background-color 300ms ease-out !important;
+  -o-transition: background-color 300ms ease-out !important;
+  transition: background-color 300ms ease-out !important;
+  margin-left: 10px;
+}
+
+/*
+   Footer
+ */
+.IDN-footer__section {
+  /* display: none; */
+  position: relative;
+  /* position: absolute;
+  bottom: 0; */
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  border-top: 1px groove #1f1f1f;
+}
+.IDN-footer__section .IDN-footer__copy {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-align: start;
+}
+.IDN-footer__section .IDN-footer__text {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.IDN-footer__section .IDN-footer__scrool {
+  position: absolute;
+  width: 100%;
+  top: -100%;
+  bottom: 0;
+  left: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20em;
+}
+.spinner .blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  width: 11px;
+  height: 10px;
+  border-radius: 50%;
+}
+.spinner .blob.top {
+  top: 0;
+  -webkit-animation: blob-top 1s infinite ease-in;
+  animation: blob-top 1s infinite ease-in;
+}
+.spinner .blob.bottom {
+  top: 100%;
+  -webkit-animation: blob-bottom 1s infinite ease-in;
+  animation: blob-bottom 1s infinite ease-in;
+}
+.spinner .blob.left {
+  left: 0;
+  -webkit-animation: blob-left 1s infinite ease-in;
+  animation: blob-left 1s infinite ease-in;
+}
+.spinner .move-blob {
+  background: #fff;
+  top: 0;
+  -webkit-animation: blob-spinner-mover 1s infinite ease-in;
+  animation: blob-spinner-mover 1s infinite ease-in;
+}
+
+@-webkit-keyframes blob-bottom {
+  25%,
+  50%,
+  75% {
+    top: 50%;
+    left: 100%;
+  }
+  100% {
+    top: 0;
+    left: 50%;
+  }
+}
+
+@keyframes blob-bottom {
+  25%,
+  50%,
+  75% {
+    top: 50%;
+    left: 100%;
+  }
+  100% {
+    top: 0;
+    left: 50%;
+  }
+}
+@-webkit-keyframes blob-left {
+  25% {
+    top: 50%;
+    left: 0;
+  }
+  50%,
+  100% {
+    top: 100%;
+    left: 50%;
+  }
+}
+@keyframes blob-left {
+  25% {
+    top: 50%;
+    left: 0;
+  }
+  50%,
+  100% {
+    top: 100%;
+    left: 50%;
+  }
+}
+@-webkit-keyframes blob-top {
+  50% {
+    top: 0;
+    left: 50%;
+  }
+  75%,
+  100% {
+    top: 50%;
+    left: 0;
+  }
+}
+@keyframes blob-top {
+  50% {
+    top: 0;
+    left: 50%;
+  }
+  75%,
+  100% {
+    top: 50%;
+    left: 0;
+  }
+}
+@-webkit-keyframes blob-spinner-mover {
+  0%,
+  100% {
+    top: 0;
+    left: 50%;
+  }
+  25% {
+    top: 50%;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 50%;
+  }
+  75% {
+    top: 50%;
+    left: 0;
+  }
+}
+@keyframes blob-spinner-mover {
+  0%,
+  100% {
+    top: 0;
+    left: 50%;
+  }
+  25% {
+    top: 50%;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 50%;
+  }
+  75% {
+    top: 50%;
+    left: 0;
+  }
 }
